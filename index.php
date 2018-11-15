@@ -1,40 +1,12 @@
-<?php
-
-include 'Curl/CaseInsensitiveArray.php';
-include 'Curl/Curl.php';
-include 'Curl/MultiCurl.php';
-
-include 'DiDom/Document.php';
-include 'DiDom/Element.php';
-include 'DiDom/Query.php';
-
-use Curl\Curl;
-use DiDom\Document;
-use DiDom\Element;
-
-$curl = new Curl();  
-$curl->setOpt(CURLOPT_ENCODING , '');
-$curl->setOpt(CURLOPT_FAILONERROR, true); 
-$curl->setOpt(CURLOPT_FOLLOWLOCATION, true); 
-$curl->setOpt(CURLOPT_RETURNTRANSFER, true); 
-$curl->setOpt(CURLOPT_SSL_VERIFYHOST, false); 
-$curl->setOpt(CURLOPT_SSL_VERIFYPEER, false);  
-$curl->setOpt(CURLOPT_ENCODING, ''); 
-$html = $curl->get('http://dantri.com.vn/xa-hoi.htm');
-
-$doc = new Document();
-$doc->loadHtml($html);
- 
-
-$elements = $doc->find('div[class=mr1]');
-
-for($i = 0;$i < count($elements);++$i){
-    $e =  $elements[$i];
-    
-    echo $e->find('h2')[0]->find('a')[0]->text() . '<br />';
-}
-
-
-
-
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	Github HungDV
+</body>
+</html>
